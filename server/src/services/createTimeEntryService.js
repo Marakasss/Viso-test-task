@@ -1,3 +1,4 @@
+import createHttpError from "http-errors";
 import { prisma } from "../../lib/prisma.ts";
 
 export async function createTimeEntryService({
@@ -7,15 +8,15 @@ export async function createTimeEntryService({
   description,
 }) {
   if (!date || !project || hours === undefined || description === undefined) {
-    throw new Error("All fields are required");
+    throw new createHttpError.BadRequest("All fields are required");
   }
 
   if (typeof hours !== "number" || hours <= 0) {
-    throw new Error("Hours must be a positive number");
+    throw new createHttpError.BadRequest("Hours must be a positive number");
   }
 
   if (typeof description !== "string" || description.trim() === "") {
-    throw new Error("Description is required");
+    throw new createHttpError.BadRequest("Description is required");
   }
 
   const parsedDate = new Date(date);
@@ -37,7 +38,7 @@ export async function createTimeEntryService({
   );
 
   if (totalHours + hours > 24) {
-    throw new Error("Total hours for this date exceed 24");
+    throw new createHttpError.BadRequest("Total hours for this date exceed 24");
   }
 
   return prisma.timeEntry.create({
