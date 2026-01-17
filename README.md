@@ -167,4 +167,6 @@ Backend must be running for the frontend to work correctly
 
 The focus is on clean architecture and predictable data flow
 
+
+
 ```
