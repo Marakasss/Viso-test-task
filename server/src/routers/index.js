@@ -3,6 +3,6 @@ import entriesRouter from "./entries.js";
 
 const router = Router();
 
-router.use("/entries", entriesRouter);
+router.use("/", entriesRouter);
 
 export default router;

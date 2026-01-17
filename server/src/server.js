@@ -5,10 +5,19 @@ import pino from "pino-http";
 import router from "./routers/index.js";
 import { notFoundHandler } from "./middlewares/notFoundHandler.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
+import { prisma } from "../lib/prisma.ts";
 
 const PORT = getEnvVar("PORT", 3000);
 
-export default function setupServer() {
+export default async function setupServer() {
+  try {
+    await prisma.$connect();
+    console.log("✅ DB CONNECTED");
+  } catch (error) {
+    console.error("❌ DB CONNECTION ERROR:", error);
+    process.exit(1);
+  }
+
   const app = express();
   app.use(
     express.json({
