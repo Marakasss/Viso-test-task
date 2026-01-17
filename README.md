@@ -80,9 +80,91 @@ npx prisma generate
 npm run dev
 
 
-Server will run at http://localhost:3000
+Server will run at http://localhost:4000
 
 
+🖥 Mini Time Tracker — Frontend
+🧩 Overview
 
+This is the frontend part of the Mini Time Tracker — a web interface that communicates with the backend API.
+It allows users to create, view and delete time entries, as well as see daily summaries and the overall total.
+
+🚀 Technologies
+
+Next.js (App Router) — React framework
+
+TypeScript — static typing (frontend only)
+
+Axios — HTTP client
+
+TanStack React Query — data fetching and caching
+
+shadcn/ui + Tailwind CSS — UI components and styling
+
+📁 Project Structure
+
+
+client/
+├── app/
+  ├── globals.css # Global styles
+│ ├── layout.tsx # Root layout
+│ ├── page.tsx # Entries page
+│ └── summary/ # Summary page
+├── components/
+│ ├── EntryForm/ # Create entry form
+│ ├── EntryList/ # Entries list
+| ├── Summary/ # Summary
+│ └── Header/ # Navigation
+├── services/
+│ ├── api.ts # Axios instance
+│ └── entries.ts # API calls
+├── types/
+│ └── entry.ts # Shared types
+│
+
+
+🧪 Features
+
+Create new time entries
+
+Select project from predefined list
+
+View entries grouped by date
+
+Display daily totals and grand total
+
+Delete entries
+
+Client-side validation
+
+Optimistic UI updates with React Query
+
+⚙️ Setup Instructions
+# Go to frontend folder
+cd client
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+
+Frontend runs at:
+
+http://localhost:3000
+
+🔗 Backend Integration
+
+The frontend communicates with the backend via a REST API using Axios.
+All data fetching and mutations are managed with React Query to ensure consistent state and caching.
+
+📝 Notes
+
+Authentication is not implemented (out of scope)
+
+Backend must be running for the frontend to work correctly
+
+The focus is on clean architecture and predictable data flow
 
 ```
