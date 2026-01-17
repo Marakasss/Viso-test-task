@@ -21,7 +21,8 @@ This is the backend API for the Mini Time Tracker — a test assignment for Viso
 
 ### 📁 Project Structure
 
-
+```
+
 server/
 ├── src/
 │ ├── controllers/ # Route handlers
@@ -37,6 +38,8 @@ server/
 ├── dev.db # SQLite database
 ├── .env # Environment variables
 ├── README.md # Documentation
+
+```
 
 ---
 
@@ -107,7 +110,8 @@ shadcn/ui + Tailwind CSS — UI components and styling
 
 ### 📁 Project Structure
 
-
+```
+
 client/
 ├── app/
 ├── globals.css # Global styles
@@ -125,6 +129,8 @@ client/
 ├── types/
 │ └── entry.ts # Shared types
 │
+
+```
 
 ---
 
