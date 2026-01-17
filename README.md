@@ -22,7 +22,21 @@ This is the backend API for the Mini Time Tracker — a test assignment for Viso
 ### 📁 Project Structure
 
 
-server/ ├── src/ │ ├── controllers/ # Route handlers │ ├── services/ # Business logic │ ├── routers/ # API routes │ ├── middlewares/ # Error handling │ ├── lib/ # Prisma client │ ├── utils/ # Helpers │ └── index.ts # Entry point ├── prisma/ │ ├── schema.prisma # TimeEntry model │ └── dev.db # SQLite database ├── .env # Environment variables ├── README.md # Documentation
+server/
+├── src/
+│ ├── controllers/ # Route handlers
+│ ├── services/ # Business logic
+│ ├── routers/ # API routes
+│ ├── middlewares/ # Error handling
+│ ├── utils/ # Helpers
+│ ├── server.js # Entry point
+│ └── index.js # Entry point
+├── prisma/
+│ └── schema.prisma # TimeEntry model
+├── lib/ # Prisma client
+├── dev.db # SQLite database
+├── .env # Environment variables
+├── README.md # Documentation
 
 ---
 
