@@ -7,7 +7,7 @@ import { notFoundHandler } from "./middlewares/notFoundHandler.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { prisma } from "../lib/prisma.ts";
 
-const PORT = getEnvVar("PORT", 3000);
+const PORT = getEnvVar("PORT", 4000);
 
 export default async function setupServer() {
   try {
